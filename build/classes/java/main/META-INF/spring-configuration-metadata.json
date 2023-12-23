@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "operation.processing",
+      "type": "ru.netology.IlyaRomanov.configuration.OperationProperties",
+      "sourceType": "ru.netology.IlyaRomanov.configuration.OperationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "operation.processing.sleep-milli-seconds",
+      "type": "java.lang.Integer",
+      "sourceType": "ru.netology.IlyaRomanov.configuration.OperationProperties",
+      "defaultValue": 0
+    }
+  ],
+  "hints": []
+}
