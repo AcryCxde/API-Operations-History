@@ -34,30 +34,21 @@ public class StatementServiceTest extends OperationHistoryApiApplicationTest {
         statementService.addToStatement(1);
 
         Map<Customer, List<Operation>> eqStatement = new HashMap<>();
-
-        // Первый клиент
         Customer customer1 = new Customer(1, "Spring");
         List<Operation> opers1 = new ArrayList<>();
         opers1.add(operation);
         eqStatement.put(customer1, opers1);
-
-        // Второй клиент с пустым списком операций
         Customer customer2 = new Customer(2, "Boot");
 
         assertEquals(eqStatement, statementService.getStatement());
     }
-
-
-
-
     public Map<Customer, List<Operation>> getStatement() {
         return statement;
     }
 
     @Test
     public void deleteOperationById() {
-        int operationIdToDelete = 1; // Идентификатор операции, которую вы хотите удалить
-        // Находим операцию по ID
+        int operationIdToDelete = 1; 
         Operation operationToDelete = null;
         for (List<Operation> operations : statement.values()) {
             for (Operation operation : operations) {
