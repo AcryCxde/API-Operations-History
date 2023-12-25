@@ -94,8 +94,7 @@ public class StatementService {
             lock.unlock();
         }
     }
-
-    // Добавленный метод
+    
     public List<Operation> getOperations() {
         lock.lock();
         try {
