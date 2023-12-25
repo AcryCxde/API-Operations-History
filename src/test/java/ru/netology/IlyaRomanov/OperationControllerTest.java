@@ -20,7 +20,7 @@ public class OperationControllerTest extends OperationHistoryApiApplicationTest 
     private OperationController operationController;
 
     @Autowired
-    private StatementService statementService;  // Теперь внедряется в тест
+    private StatementService statementService; 
 
     @Test
     public void addOperationTest() throws InterruptedException {
@@ -84,11 +84,7 @@ public class OperationControllerTest extends OperationHistoryApiApplicationTest 
         Thread.sleep(2000);
 
         operationController.deleteOperation(1);
-
-        // Remove the operation with id 1 from the expected map
         eqMap.get(c1).removeIf(operation -> operation.getId() == 1);
-
-        // Вместо создания нового экземпляра используйте внедренный в контроллер StatementService
         assertEquals(eqMap, statementService.getStatement());
     }
 
